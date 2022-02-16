@@ -6,8 +6,11 @@ const form = document.getElementById("mform")
 form.addEventListener("submit", function (event){
     event.preventDefault()
     const movieText = document.getElementById("mtext").value
-    createMovie(movieText)
+    console.log('click')
+    // createMovie(movieText)
 })
+
+
 
 //create a delete button / aka. listen for different actions / delete / edit / update / cancel change
 
@@ -22,3 +25,20 @@ form.addEventListener("submit", function (event){
 
 //display movie list in alphabtical order
 
+// CRUD functions
+
+function movieList() {
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data)
+
+            for (let movieObj of data) {
+                // renderMovieItem(movieObj)
+                console.log(movieObj)
+            }
+        })
+}
+
+
+movieList()
