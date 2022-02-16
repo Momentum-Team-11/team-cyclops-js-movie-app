@@ -2,14 +2,33 @@ const url = 'http://localhost:3000/movies'
 console.log ('hello world')
 const form = document.getElementById("mform")
 
+function createMovie(movieName) {
+    fetch(url, {
+        method:'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({title: movieText}),
+        },
+    )
+    .then((response) => response.json())
+    .then((data) => {
+// write a function to do work
+console.log(data)
+    })
+    form.reset()
+}
+
 //create a function where an item is created / aka lsiten for form submit and display item
 form.addEventListener("submit", function (event){
     event.preventDefault()
     const movieText = document.getElementById("mtext").value
     console.log('click')
-    // createMovie(movieText)
-})
 
+
+// write a function to do work
+
+
+    createMovie(movieText)
+})
 
 
 //create a delete button / aka. listen for different actions / delete / edit / update / cancel change
